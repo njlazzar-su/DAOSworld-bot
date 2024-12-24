@@ -54,7 +54,7 @@ def get_token_data_with_mc(contract_address):
     except Exception as e:
         return {"symbol": "Error", "formatted_market_cap": f"Error: {e}", "market_cap": 0}
 
-@bot.message_handler(commands=['marketcap'])
+@bot.message_handler(commands=['price'])
 def list_market_caps_sorted(message):
     """
     Telegram command to list the market caps of the tokens sorted by highest market cap.
@@ -78,5 +78,5 @@ def list_market_caps_sorted(message):
 
 # Start the bot
 if __name__ == "__main__":
-    print("Bot is running. Send /marketcap to get the latest token market caps sorted by highest market cap.")
+    print("Bot is running. Send /price to get the latest token market caps sorted by highest market cap.")
     bot.polling()
